@@ -2,7 +2,7 @@
 import useState from 'react';
 
 
-export default function Forgotpassword(props) {
+export default function Resetpassword(props) {
     let [password, setpassword] = useState('')
     const token = props.match.params.id;
 

@@ -3,32 +3,32 @@ import useState from 'react';
 
 
 export default function Resetpassword(props) {
-    let [password, setpassword] = useState('')
+    // let [password, setpassword] = useState('')
     const token = props.match.params.token;
 
     console.log(props.match.params.token)
-    let UserSubmit = async (e) => {
-        e.preventDefault()
-         await fetch("https://forgotpasswordlink.herokuapp.com/auth/newpassword", {
-            method: "POST",
-            body: JSON.stringify({
-                password, token
-            }),
-            headers: {
-                "content-type": "application/json"
-            }
-        }).then(res => {
-            return res.json();
+    // let UserSubmit = async (e) => {
+    //     e.preventDefault()
+    //      await fetch("https://forgotpasswordlink.herokuapp.com/auth/newpassword", {
+    //         method: "POST",
+    //         body: JSON.stringify({
+    //             password, token
+    //         }),
+    //         headers: {
+    //             "content-type": "application/json"
+    //         }
+    //     }).then(res => {
+    //         return res.json();
 
-        }).then((message) => {
-            console.log(message)
-            let mesg = JSON.stringify(message)
-            alert(mesg)
-        }).catch(err => {
-            // Do something for an error here
-            console.log("Error Reading data " + err);
-        });
-    }
+    //     }).then((message) => {
+    //         console.log(message)
+    //         let mesg = JSON.stringify(message)
+    //         alert(mesg)
+    //     }).catch(err => {
+    //         // Do something for an error here
+    //         console.log("Error Reading data " + err);
+    //     });
+    // }
 
     return (
         <div className="container">
@@ -36,11 +36,11 @@ export default function Resetpassword(props) {
                 <h1>Reset password</h1>
                 <div className="col-md-8 m-4">
 
-                    <form onSubmit={UserSubmit}>
+                    <form>
 
                         <div class="form-group m-2">
                             <label for="exampleInputPassword1">Enter new Password</label>
-                            <input type="password" class="form-control" value={password} onChange={(e) => setpassword(e.target.value)}></input>
+                            <input type="password" class="form-control" ></input>
                         </div>
 
 

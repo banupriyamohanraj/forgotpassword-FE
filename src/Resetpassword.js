@@ -4,7 +4,7 @@ import useState from 'react';
 
 export default function Resetpassword(props) {
     let [password, setpassword] = useState('')
-    const token = props.match.params.id;
+    const token = props.match.params.token;
 
     console.log(props.match.params.token)
     let UserSubmit = async (e) => {
